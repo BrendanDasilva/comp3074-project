@@ -11,7 +11,7 @@ import {
 
 
 import { LinearGradient } from "expo-linear-gradient";
-import styles from "../assets/RestaurantStyles/RestaurantStyles.js";
+import styles from "../assets/styles/RestaurantStyles/RestaurantStyles.js";
 
 // -- FILTER ICONS -- 
 import phone from "../assets/icons/phone.png";

@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
   Alert,
 } from "react-native";
-import styles from '../assets/LoginScreenStyles/LoginScreenStyles';
+
+import styles from '../assets/styles/LoginScreenStyles/LoginScreenStyles';
 import { LinearGradient } from "expo-linear-gradient";
 
 
