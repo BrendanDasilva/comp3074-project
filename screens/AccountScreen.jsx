@@ -10,6 +10,12 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import placeholder from "../assets/placeholder.png";
 import nightout from "../assets/nightout.png";
+import girlsnight from "../assets/girlsnight.png";
+import fancyplace from "../assets/fancyplace.jpg";
+import pub from "../assets/pub.jpg";
+import pizza from "../assets/pizza.jpg";
+import seafood from "../assets/seafood.jpg";
+import sandwhich from "../assets/sandwhich.jpg";
 
 const AccountScreen = () => {
   const navigation = useNavigation();
@@ -55,7 +61,7 @@ const AccountScreen = () => {
           <TouchableOpacity onPress={() => navigation.navigate("Pod")}>
             <Image source={nightout} style={styles.podImage} />
           </TouchableOpacity>
-          <Image source={placeholder} style={styles.podImage} />
+          <Image source={girlsnight} style={styles.podImage} />
         </View>
       </View>
 
@@ -63,8 +69,8 @@ const AccountScreen = () => {
       <View style={styles.podContainer}>
         <Text style={styles.podLabel}>Restaurants in the City</Text>
         <View style={styles.imageRow}>
-          <Image source={placeholder} style={styles.podImage} />
-          <Image source={placeholder} style={styles.podImage} />
+          <Image source={fancyplace} style={styles.podImage} />
+          <Image source={pub} style={styles.podImage} />
         </View>
       </View>
 
@@ -72,8 +78,8 @@ const AccountScreen = () => {
       <View style={styles.podContainer}>
         <Text style={styles.podLabel}>Pod with Mom & Dad</Text>
         <View style={styles.imageRow}>
-          <Image source={placeholder} style={styles.podImage} />
-          <Image source={placeholder} style={styles.podImage} />
+          <Image source={pizza} style={styles.podImage} />
+          <Image source={seafood} style={styles.podImage} />
         </View>
       </View>
 
@@ -81,8 +87,8 @@ const AccountScreen = () => {
       <View style={styles.podContainer}>
         <Text style={styles.podLabel}>Work Lunch</Text>
         <View style={styles.imageRow}>
-          <Image source={placeholder} style={styles.podImage} />
-          <Image source={placeholder} style={styles.podImage} />
+          <Image source={sandwhich} style={styles.podImage} />
+          <Image source={pizza} style={styles.podImage} />
         </View>
       </View>
     </ScrollView>

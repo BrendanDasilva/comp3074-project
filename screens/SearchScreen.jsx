@@ -7,7 +7,14 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import placeholder from "../assets/placeholder.png";
+import burger from "../assets/restaurants/Burger.png";
+import italian from "../assets/restaurants/Pasta.png";
+import breakfast from "../assets/restaurants/Breakfast.png";
+import mexican from "../assets/restaurants/mexican.png";
+import chickentenders from "../assets/restaurants/chickentenders.png";
+
+const restaurantImages = [chickentenders, italian, burger, mexican, breakfast];
+
 
 const SearchScreen = () => {
   return (
@@ -26,11 +33,11 @@ const SearchScreen = () => {
 
       {/* Restaurant List */}
       <ScrollView contentContainerStyle={styles.listContainer}>
-        <Image source={placeholder} style={styles.restaurantImage} />
-        <Image source={placeholder} style={styles.restaurantImage} />
-        <Image source={placeholder} style={styles.restaurantImage} />
-        <Image source={placeholder} style={styles.restaurantImage} />
-        <Image source={placeholder} style={styles.restaurantImage} />
+        <Image source={mexican} style={styles.restaurantImage} />
+        <Image source={burger} style={styles.restaurantImage} />
+        <Image source={breakfast} style={styles.restaurantImage} />
+        <Image source={italian} style={styles.restaurantImage} />
+        <Image source={chickentenders} style={styles.restaurantImage} />
       </ScrollView>
     </View>
   );

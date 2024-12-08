@@ -29,5 +29,16 @@
   "devDependencies": {
     "@babel/core": "^7.20.0"
   },
-  "private": true
+  "private": true,
+  "description": "comp3074 group assignment",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrendanDasilva/comp3074-project.git"
+  },
+  "author": "group 33",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrendanDasilva/comp3074-project/issues"
+  },
+  "homepage": "https://github.com/BrendanDasilva/comp3074-project#readme"
 }

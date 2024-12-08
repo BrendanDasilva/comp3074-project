@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
       borderRadius: 36,
       marginBottom: 20,
       backgroundColor: "#0e1621",
+      color: "white"
     },
   
     neumorphic: {
