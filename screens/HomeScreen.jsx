@@ -51,7 +51,7 @@ const HomeScreen = () => {
         <Text style={styles.authButtonText}>LOGIN</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.authButton} onPress={() => navigation.navigate("Signup")}>
-        <Text style={styles.authButtonText}>SIGN</Text>
+        <Text style={styles.authButtonText}>SIGN UP</Text>
         </TouchableOpacity>
       </View> 
 

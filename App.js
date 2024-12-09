@@ -55,7 +55,7 @@ export default function App() {
 
         {/* -- LOGIN SCREEN -- */}
         <Stack.Screen name="Login" component={LoginScreen} />
-
+        <Stack.Screen name="Signup" component={SignupScreen} />
         {/* -- MAIN APP WITH BOTTOM NAV -- */}
         <Stack.Screen name="MainTabs" component={MainTabs} />
       </Stack.Navigator>
