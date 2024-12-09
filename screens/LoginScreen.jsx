@@ -10,6 +10,7 @@ import {
 
 import styles from '../assets/styles/LoginScreenStyles/LoginScreenStyles';
 import { LinearGradient } from "expo-linear-gradient";
+import API from "../api";
 
 
 const LoginScreen = ({ navigation }) => {
@@ -18,13 +19,19 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
 
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!username || !password) {
       Alert.alert("Error", "Please fill in both fields.");
     } else {
-      // Handle login logic here
-      // Alert.alert("Success", `Welcome back, ${username}!`);
-      navigation.navigate("MainTabs")
+      try {
+        const response = await API.post("/user/login", {username, password});
+        const { user, message } = response.data;
+        Alert.alert("Success", message);
+        navigation.navigate("MainTabs", {user});
+      } catch (err) {
+        const errorMessage = err.response?.data?.error || "Something went wrong.";
+        Alert.alert("Error", errorMessage);
+      }
     }
   };
 
@@ -72,7 +79,7 @@ const LoginScreen = ({ navigation }) => {
 
       {/* MENU CONTAINER */}
       <View style={styles.footer}>
-      <TouchableOpacity onPress={() => Alert.alert("Sign Up")}>
+      <TouchableOpacity onPress={() => navigation.navigate("Signup")}>
           <Text style={styles.footerText}>Sign Up</Text>
         </TouchableOpacity>
 

@@ -3,29 +3,44 @@ import {
   View,
   Text,
   TextInput,
-  StyleSheet,
+  // StyleSheet,
   TouchableOpacity,
   Alert,
 } from "react-native";
 
 import styles from "../assets/styles/SignupScreenStyles/SignupScreenStyles.js";
+import API from "../api"
 
 const SignupScreen = ({ navigation }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSignup = () => {
-    if (!firstName || !lastName || !email || !password || !confirmPassword) {
-      Alert.alert("Error", "All fields are required.");
-    } else if (password !== confirmPassword) {
-      Alert.alert("Error", "Passwords do not match.");
-    } else {
-      // Handle signup logic here
-      Alert.alert("Success", `Welcome, ${firstName}!`);
-    }
+  const handleSignup = async () => {
+      if (!firstName || !lastName || !email || !password || !confirmPassword || !username) {
+          Alert.alert("Error", "All fields are required.");
+      } else if (password !== confirmPassword) {
+          Alert.alert("Error", "Passwords do not match.");
+      } else {
+          try {
+              const response = await API.post("/user/signup", {
+                  firstName,
+                  lastName,
+                  username,
+                  email,
+                  password,
+              });
+
+              Alert.alert("Success", response.data.message);
+              navigation.navigate("Login");
+          } catch (err) {
+              const errorMessage = err.response?.data?.error || "Something went wrong.";
+              Alert.alert("Error", errorMessage);
+          }
+      }
   };
 
   return (
@@ -46,6 +61,14 @@ const SignupScreen = ({ navigation }) => {
         placeholderTextColor="#aaa"
         value={lastName}
         onChangeText={setLastName}
+      />
+
+      <TextInput
+          style={styles.input}
+          placeholder="Username"
+          placeholderTextColor="#aaa"
+          value={username}
+          onChangeText={setUsername}
       />
 
       <TextInput
